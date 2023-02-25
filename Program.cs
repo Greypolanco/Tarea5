@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 var ConStr = builder.Configuration.GetConnectionString("ConStr");
 
 builder.Services.AddDbContext<Context>(option => option.UseSqlite(ConStr));
+builder.Services.AddScoped<PaymentsBLL>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
